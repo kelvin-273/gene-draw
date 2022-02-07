@@ -1,0 +1,60 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           genotype
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/kelvin-273/genotype#readme>
+homepage:       https://github.com/kelvin-273/genotype#readme
+bug-reports:    https://github.com/kelvin-273/genotype/issues
+author:         Kelvin Davis
+maintainer:     273degreeskelvin@gmail.com
+copyright:      2022 Kelvin Davis
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/kelvin-273/genotype
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_genotype
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable genotype-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_genotype
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , genotype
+  default-language: Haskell2010
+
+test-suite genotype-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_genotype
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , genotype
+  default-language: Haskell2010
