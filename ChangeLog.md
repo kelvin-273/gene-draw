@@ -1,3 +1,3 @@
-# Changelog for genotype
+# Changelog for gene-draw
 
 ## Unreleased changes

@@ -1,6 +1,6 @@
-name:                genotype
+name:                gene-draw
 version:             0.1.0.0
-github:              "kelvin-273/genotype"
+github:              "kelvin-273/gene-draw"
 license:             BSD3
 author:              "Kelvin Davis"
 maintainer:          "273degreeskelvin@gmail.com"
@@ -17,16 +17,21 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/kelvin-273/genotype#readme>
+description:         Please see the README on GitHub at <https://github.com/kelvin-273/gene-draw#readme>
 
 dependencies:
 - base >= 4.7 && < 5
+#- diagrams >= 1.4
+#- diagrams-tikz >= 0.6
+- HaTeX
+- optparse-applicative
+- Hclip
 
 library:
   source-dirs: src
 
 executables:
-  genotype-exe:
+  genedraw-exe:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
@@ -34,10 +39,10 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - genotype
+    - gene-draw
 
 tests:
-  genotype-test:
+  genedraw-test:
     main:                Spec.hs
     source-dirs:         test
     ghc-options:
@@ -45,4 +50,5 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - genotype
+    - gene-draw
+    - hspec
